@@ -34,7 +34,7 @@ const crearRol = async (req,res)=>{
             message:`El cliente con ese nombre ${body.nombre} ya se encuentra registrado`
         })
     }
-    const rol = new Cliente(body);
+    const rol = new Rol(body);
     const rolNuevo= await rol.save();
     return res.status(201).json(rolNuevo);
 
