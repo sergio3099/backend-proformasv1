@@ -16,6 +16,7 @@ class Server
             tipoAluminios: '/api/tipoaluminios',
             medidas: '/api/medidas',
             proformas: '/api/proformas',
+            roles: '/api/roles',
         }
         this.conectarDB();
         this.middlewares();
@@ -41,6 +42,7 @@ class Server
         this.app.use(this.paths.tipoAluminios, require('./routes/tipoAluminio'))
         this.app.use(this.paths.medidas, require('./routes/medida'))
         this.app.use(this.paths.proformas, require('./routes/proforma'))
+        this.app.use(this.paths.proformas, require('./routes/rol'))
     }
     listen(){
         this._express.listen(this.port, () => {
