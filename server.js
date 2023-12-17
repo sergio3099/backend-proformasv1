@@ -10,13 +10,11 @@ class Server
         this.router = express.Router();
         this.port = process.env.PORT;
         this.paths = {
-            clientes: '/api/clientes',
             productos: '/api/productos',
             tipoVidrios: '/api/tipovidrios',
             tipoAluminios: '/api/tipoaluminios',
             medidas: '/api/medidas',
-            proformas: '/api/proformas',
-            roles: '/api/roles'
+            proformas: '/api/proformas'
         }
         this.conectarDB();
         this.middlewares();
@@ -36,13 +34,11 @@ class Server
     }
 
     routes(){
-        this.app.use(this.paths.clientes, require('./routes/cliente'))
         this.app.use(this.paths.productos, require('./routes/producto'))
         this.app.use(this.paths.tipoVidrios, require('./routes/tipoVidrio'))
         this.app.use(this.paths.tipoAluminios, require('./routes/tipoAluminio'))
         this.app.use(this.paths.medidas, require('./routes/medida'))
         this.app.use(this.paths.proformas, require('./routes/proforma'))
-        this.app.use(this.paths.roles, require('./routes/rol'))
     }
     listen(){
         this._express.listen(this.port, () => {
