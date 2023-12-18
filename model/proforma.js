@@ -41,10 +41,18 @@ const  ProformaSchema = Schema({
         ref: 'TipoAluminio',
         required: [true, 'El tipo de aluminio es obligatorio en la proforma']
     },
-    idMedida: {
-        type: Schema.Types.ObjectId,
-        ref: 'Medida',
-        required: [true, 'Las medidas son obligatorias en la proforma']
+
+    alto:{
+        type: Number,
+        required: [true, 'El alto del producto es obligatorio en la proforma']
+    },
+    ancho:{
+        type: Number,
+        required: [true, 'El alto del producto es obligatorio en la proforma']
+    },
+    grosorVidrio:{
+        type: Number,
+        required: [true, 'El alto del producto es obligatorio en la proforma']
     }
 })
 
