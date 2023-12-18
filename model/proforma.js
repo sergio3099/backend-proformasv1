@@ -26,21 +26,31 @@ const  ProformaSchema = Schema({
     celular:{
         type: Number,
     },
-    idProducto: {
-        type: Schema.Types.ObjectId,
-        ref: 'Producto',
-        required: [true, 'El producto es obligatorio en la proforma']
+    producto:{
+        type: Number,
     },
-    idTipoVidrio: {
-        type: Schema.Types.ObjectId,
-        ref: 'TipoVidrio',
-        required: [true, 'El Tipo de vidrio es obligatorio en la proforma']
+    vidrio:{
+        type: Number,
     },
-    idTipoAluminio: {
-        type: Schema.Types.ObjectId,
-        ref: 'TipoAluminio',
-        required: [true, 'El tipo de aluminio es obligatorio en la proforma']
+    aluminio:{
+        type: Number,
     },
+
+    // idProducto: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Producto',
+    //     required: [true, 'El producto es obligatorio en la proforma']
+    // },
+    // idTipoVidrio: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'TipoVidrio',
+    //     required: [true, 'El Tipo de vidrio es obligatorio en la proforma']
+    // },
+    // idTipoAluminio: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'TipoAluminio',
+    //     required: [true, 'El tipo de aluminio es obligatorio en la proforma']
+    // },
 
     alto:{
         type: Number,
