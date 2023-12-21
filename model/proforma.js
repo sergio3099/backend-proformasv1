@@ -34,24 +34,7 @@ const  ProformaSchema = Schema({
     },
     aluminio:{
         type: Number,
-    },
-
-    // idProducto: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Producto',
-    //     required: [true, 'El producto es obligatorio en la proforma']
-    // },
-    // idTipoVidrio: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'TipoVidrio',
-    //     required: [true, 'El Tipo de vidrio es obligatorio en la proforma']
-    // },
-    // idTipoAluminio: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'TipoAluminio',
-    //     required: [true, 'El tipo de aluminio es obligatorio en la proforma']
-    // },
-
+    },    
     alto:{
         type: Number,
         required: [true, 'El alto del producto es obligatorio en la proforma']
@@ -63,6 +46,9 @@ const  ProformaSchema = Schema({
     grosorVidrio:{
         type: Number,
         required: [true, 'El alto del producto es obligatorio en la proforma']
+    },
+    email: {
+        type: String
     }
 })
 
