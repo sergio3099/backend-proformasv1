@@ -1,15 +1,7 @@
 const { response } = require('express')
 const { Proforma } = require('../model')
-const nodemailer = require('nodemailer')
+// const nodemailer = require('nodemailer')
 
-//Configuracion ppara envios de correos
-const transporter = nodemailer.createTransport({
-    service: 'Gmail', // Aquí utiliza el servicio de correo que necesites
-    auth: {
-        user: 'arnolite128@gmail.com', // Cambia esto por tu dirección de correo electrónico
-        pass: 'yaih oixu ztuw fbwc' // Cambia esto por tu contraseña
-    }
-});
 
 
 
@@ -41,23 +33,7 @@ const crearProforma = async (req, res) => {
     const proforma = new Proforma(body);
     const proformaNueva = await proforma.save();
 
-    // Enviar correo electrónico con los datos del nuevo cliente
-    const mailOptions = {
-        from: 'arnolite128@gmail.com',
-        to: req.user.email, // Cambia esto por la dirección de correo del destinatario
-        subject: 'Proforma enviada, estos son los datos',
-        text: `Se ha enviadao una proforma con los siguientes datos
-        \nNombre: ${body.nombre}\nOtras propiedades: ...` // Agrega aquí el resto de las propiedades del cliente
-    };
 
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error('Error al enviar correo', error);
-        } else{
-            console.log('correo enviado', info.response);
-        }
-    })
     return res.status(201).json(proformaNueva);
 }
 
