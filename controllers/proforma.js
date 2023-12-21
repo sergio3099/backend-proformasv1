@@ -1,6 +1,5 @@
 const { response } = require('express')
 const { Proforma } = require('../model')
-const nodemailer = require('nodemailer')
 
 
 const obternerProformas = async (req, res = response) => {
@@ -30,8 +29,6 @@ const crearProforma = async (req, res) => {
     const { estado, ...body } = req.body;
     const proforma = new Proforma(body);
     const proformaNueva = await proforma.save();
-
-    
     return res.status(201).json(proformaNueva);
 }
 
