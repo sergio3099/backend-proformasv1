@@ -4,7 +4,6 @@ const  ProformaSchema = Schema({
     nombre: {
         type: String,
         require: [true,  'el nombre del cliente es obligatorio'],
-        unique: true
     },
     apellido: {
         type: String,
