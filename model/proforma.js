@@ -46,6 +46,9 @@ const  ProformaSchema = Schema({
     grosorVidrio:{
         type: Number,
         required: [true, 'El alto del producto es obligatorio en la proforma']
+    },
+    email: {
+        type: String
     }
 })
 
