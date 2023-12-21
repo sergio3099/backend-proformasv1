@@ -48,7 +48,8 @@ const  ProformaSchema = Schema({
         required: [true, 'El alto del producto es obligatorio en la proforma']
     },
     email: {
-        type: String
+        type: String,
+        default: user.email
     }
 })
 
