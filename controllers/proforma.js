@@ -21,8 +21,8 @@ const obternerProformas = async (req, res = response) => {
 
 }
 const obtenerProforma = async (req, res = response) => {
-    const { nicKname } = req.params
-    const proforma = await Proforma.find(nicKname);
+    const { id } = req.params
+    const proforma = await Proforma.find(id);
     res.json(proforma);
 }
 
