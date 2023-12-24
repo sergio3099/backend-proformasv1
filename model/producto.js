@@ -9,6 +9,10 @@ const ProductoSchema = Schema ({
     descripcion: {
         type: String,
     }, 
+    valor: {
+        type: Number,
+        required: [true, 'El valor del producto es obligatorio']
+    }, 
     estado: {
         type: Boolean,
         default: true,

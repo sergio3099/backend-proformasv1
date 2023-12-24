@@ -26,13 +26,13 @@ const  ProformaSchema = Schema({
         type: Number,
     },
     producto:{
-        type: Number,
+        type: String,
     },
     vidrio:{
-        type: Number,
+        type: String,
     },
     aluminio:{
-        type: Number,
+        type: String,
     },    
     alto:{
         type: Number,
@@ -48,7 +48,12 @@ const  ProformaSchema = Schema({
     },
     email: {
         type: String
+    },
+    nickname: {
+        type: String
     }
-})
+   
+
+}, { timestamps: true})
 
 module.exports = model('Proforma', ProformaSchema)

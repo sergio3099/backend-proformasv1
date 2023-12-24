@@ -1,5 +1,6 @@
 const { response } = require('express')
 const { Proforma } = require('../model')
+const {enviarCorreo} = require('./emailSender')
 
 
 const obternerProformas = async (req, res = response) => {
@@ -17,19 +18,26 @@ const obternerProformas = async (req, res = response) => {
         total,
         proformas
     })
-}
 
+}
 const obtenerProforma = async (req, res = response) => {
-    const { id } = req.params
-    const proforma = await Proforma.findById(id);
+    const { nicKname } = req.params
+    const proforma = await Proforma.find(nicKname);
     res.json(proforma);
 }
 
 const crearProforma = async (req, res) => {
     const { estado, ...body } = req.body;
-    const proforma = new Proforma(body);
-    const proformaNueva = await proforma.save();
-    return res.status(201).json(proformaNueva);
+    try {
+        const proforma = new Proforma(body);
+        const proformaNueva = await proforma.save();
+
+        await enviarCorreo(proformaNueva.email, proformaNueva)
+        return res.status(201).json(proformaNueva);
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const actualizarProforma = async (req, res = response) => {

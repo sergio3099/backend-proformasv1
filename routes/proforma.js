@@ -6,12 +6,13 @@ const {
     actualizarProforma,
     borrarProforma,
     obtenerProforma,
-    obternerProformas
+    obternerProformas,
 } = require ('../controllers').Proforma
 const { validarCampos } = require('../middlewares');
 
 const router  = Router();
 
+// router.get('/', obternerProformas );
 router.get('/', obternerProformas );
 router.get('/:id' , check('id','El id no es válidio').isMongoId()
 , validarCampos  , obtenerProforma );

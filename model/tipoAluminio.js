@@ -9,6 +9,10 @@ const TipoAluminioSchema = Schema({
     descripcion: {
         type: String,
     },
+    valor: {
+        type: Number,
+        required: [true, 'El valor del aluminio es obligatorio']
+    }, 
     estado: {
         type: Boolean,
         default: true,
