@@ -22,7 +22,7 @@ const obternerProformas = async (req, res = response) => {
 }
 const obtenerProforma = async (req, res = response) => {
     const { id } = req.params
-    const proforma = await Proforma.find(id);
+    const proforma = await Proforma.findById(id);
     res.json(proforma);
 }
 
