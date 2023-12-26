@@ -51,6 +51,10 @@ const  ProformaSchema = Schema({
     },
     nickname: {
         type: String
+    },
+    precio: {
+        type: Number,
+        default: 0
     }
    
 

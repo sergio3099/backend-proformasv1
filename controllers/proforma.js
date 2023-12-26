@@ -27,8 +27,11 @@ const obtenerProforma = async (req, res = response) => {
 }
 
 const crearProforma = async (req, res) => {
-    const { estado, ...body } = req.body;
+    const { estado,...body } = req.body;
     try {
+
+        const precio = (body.alto/4) +( body.ancho/4) + 100;
+        body.precio = precio
         const proforma = new Proforma(body);
         const proformaNueva = await proforma.save();
 
