@@ -1,4 +1,6 @@
 const {Schema, model} = require('mongoose')
+const ProductoProforma = require('./ProductoProforma')
+
 
 const  ProformaSchema = Schema({
     nombre: {
@@ -25,27 +27,6 @@ const  ProformaSchema = Schema({
     celular:{
         type: Number,
     },
-    producto:{
-        type: String,
-    },
-    vidrio:{
-        type: String,
-    },
-    aluminio:{
-        type: String,
-    },    
-    alto:{
-        type: Number,
-        required: [true, 'El alto del producto es obligatorio en la proforma']
-    },
-    ancho:{
-        type: Number,
-        required: [true, 'El alto del producto es obligatorio en la proforma']
-    },
-    grosorVidrio:{
-        type: Number,
-        required: [true, 'El alto del producto es obligatorio en la proforma']
-    },
     email: {
         type: String
     },
@@ -55,8 +36,13 @@ const  ProformaSchema = Schema({
     precio: {
         type: Number,
         default: 0
-    }
-   
+    },
+    productosProforma: [{
+        type: Array,
+        ref: 'ProductoProforma',
+        // required: true
+    }]
+
 
 }, { timestamps: true})
 

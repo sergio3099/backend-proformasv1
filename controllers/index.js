@@ -5,6 +5,7 @@ const TipoAluminio = require('./tipoAluminio')
 const Medida = require('./medida')
 const Proforma = require('./proforma')
 const Rol = require('./rol');
+const ProductoProforma = require('./ProductoProforma')
 
 module.exports = {
     Cliente,
@@ -13,5 +14,6 @@ module.exports = {
     TipoAluminio,
     Medida,
     Proforma,
-    Rol
+    Rol,
+    ProductoProforma
 }

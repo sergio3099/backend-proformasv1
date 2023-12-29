@@ -23,7 +23,8 @@ const enviarCorreo = async (destinatario, datosProforma) => {
       <p>Medidas:            ${datosProforma.alto} x  ${datosProforma.ancho}</p>
       <p>Grosor del vidrio:  ${datosProforma.grosorVidrio}</p>
       
-      <p>Nos pondremos en contacto pronto</p>` // Añade aquí los datos que quieras enviar por correo
+      <p>Si quieres ver mas detalles de la proforma visita tu perfil</p> // Añade aquí los datos que quieras enviar por correo
+      <p>Contáctanos para cotizaciones personalizadas</p>` // Añade aquí los datos que quieras enviar por correo
   };
 
   try {
